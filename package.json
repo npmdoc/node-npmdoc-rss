@@ -1,17 +1,40 @@
 {
-    "buildNpmdoc":"rss",
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "buildNpmdoc": "rss",
+    "description": "api documentation for [rss (v1.2.2)](http://github.com/dylang/node-rss) [![npm package](https://img.shields.io/npm/v/npmdoc-rss.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-rss) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-rss.svg)](https://travis-ci.org/npmdoc/node-npmdoc-rss)",
     "devDependencies": {
-        "rss": "*",
         "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "rss": "*",
         "utility2": "kaizhu256/node-utility2#alpha"
     },
-    "name":"npmdoc-rss",
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmdoc/node-npmdoc-rss",
+    "keywords": [
+        "documentation",
+        "rss"
+    ],
+    "license": "MIT",
+    "main": "lib.npmdoc_rss.js",
+    "name": "npmdoc-rss",
+    "nameAlias": "npmdoc_rss",
+    "nameOriginal": "npmdoc-rss",
+    "os": [
+        "darwin",
+        "linux"
+    ],
     "repository": {
         "type": "git",
         "url": "https://github.com/npmdoc/node-npmdoc-rss.git"
     },
     "scripts": {
-        "build-ci": "utility2 shReadmeTest build_ci.sh"
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "(set -e; npm install \"kaizhu256/node-utility2#alpha\"; utility2 shDeployHeroku)",
+        "postinstall": "if [ -f npm_scripts.sh ]; then ./npm_scripts.sh postinstall; fi",
+        "start": "(set -e; export PORT=${PORT:-8080}; utility2 start test.js)",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
     },
     "version": "0.0.1"
 }
