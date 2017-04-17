@@ -1,9 +1,11 @@
 # api documentation for  [rss (v1.2.2)](http://github.com/dylang/node-rss)  [![npm package](https://img.shields.io/npm/v/npmdoc-rss.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-rss) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-rss.svg)](https://travis-ci.org/npmdoc/node-npmdoc-rss)
 #### RSS feed generator. Add RSS feeds to any project. Supports enclosures and GeoRSS.
 
-[![NPM](https://nodei.co/npm/rss.png?downloads=true)](https://www.npmjs.com/package/rss)
+[![NPM](https://nodei.co/npm/rss.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/rss)
 
-[![apidoc](https://npmdoc.github.io/node-npmdoc-rss/build/screenCapture.buildNpmdoc.browser._2Fhome_2Ftravis_2Fbuild_2Fnpmdoc_2Fnode-npmdoc-rss_2Ftmp_2Fbuild_2Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-rss/build/apidoc.html)
+- [https://npmdoc.github.io/node-npmdoc-rss/build/apidoc.html](https://npmdoc.github.io/node-npmdoc-rss/build/apidoc.html)
+
+[![apidoc](https://npmdoc.github.io/node-npmdoc-rss/build/screenCapture.buildCi.browser.%252Ftmp%252Fbuild%252Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-rss/build/apidoc.html)
 
 ![npmPackageListing](https://npmdoc.github.io/node-npmdoc-rss/build/screenCapture.npmPackageListing.svg)
 
@@ -17,8 +19,7 @@
 
 {
     "author": {
-        "name": "Dylan Greene",
-        "email": "dylang@gmail.com"
+        "name": "Dylan Greene"
     },
     "browserify": {
         "transform": [
@@ -30,12 +31,10 @@
     },
     "contributors": [
         {
-            "name": "Dylan Greene",
-            "email": "dylang@gmail.com"
+            "name": "Dylan Greene"
         },
         {
-            "name": "Xavier Damman",
-            "email": "xdamman@gmail.com"
+            "name": "Xavier Damman"
         },
         {
             "name": "Michael R. Lange"
@@ -47,23 +46,19 @@
             "name": "Danny Graham"
         },
         {
-            "name": "Patrick Garman",
-            "email": "contact@pmgarman.me"
+            "name": "Patrick Garman"
         },
         {
             "name": "Fred Morstatter"
         },
         {
-            "name": "Eric Vantillard",
-            "email": "eric.vantillard@evaxion.fr"
+            "name": "Eric Vantillard"
         },
         {
-            "name": "Jason Karns",
-            "email": "jasonkarns"
+            "name": "Jason Karns"
         },
         {
-            "name": "Hannah Wolfe",
-            "email": "github.erisds@gmail.com"
+            "name": "Hannah Wolfe"
         }
     ],
     "dependencies": {
@@ -109,17 +104,14 @@
     "main": "lib/index",
     "maintainers": [
         {
-            "name": "dylang",
-            "email": "dylang@gmail.com"
+            "name": "dylang"
         },
         {
-            "name": "erisds",
-            "email": "erisds@gmail.com"
+            "name": "erisds"
         }
     ],
     "name": "rss",
     "optionalDependencies": {},
-    "readme": "ERROR: No README data found!",
     "repository": {
         "type": "git",
         "url": "git+ssh://git@github.com/dylang/node-rss.git"
@@ -145,16 +137,6 @@
     "version": "1.2.2"
 }
 ```
-
-
-
-# <a name="apidoc.tableOfContents"></a>[table of contents](#apidoc.tableOfContents)
-
-#### [module rss](#apidoc.module.rss)
-
-
-
-# <a name="apidoc.module.rss"></a>[module rss](#apidoc.module.rss)
 
 
 
