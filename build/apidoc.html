@@ -61,12 +61,287 @@
 
     <li class="apidocModuleLi"><a href="#apidoc.module.rss">module rss</a><ol>
 
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rss.rss">
+            function <span class="apidocSignatureSpan"></span>rss
+            <span class="apidocSignatureSpan">(options, items)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rss.Gruntfile">
+            function <span class="apidocSignatureSpan">rss.</span>Gruntfile
+            <span class="apidocSignatureSpan">(grunt)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rss.toString">
+            function <span class="apidocSignatureSpan">rss.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.rss.Gruntfile">module rss.Gruntfile</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rss.Gruntfile.Gruntfile">
+            function <span class="apidocSignatureSpan">rss.</span>Gruntfile
+            <span class="apidocSignatureSpan">(grunt)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.rss.toString">module rss.toString</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rss.toString.toString">
+            function <span class="apidocSignatureSpan">rss.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
     </ol></li>
 
 </ol></div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.rss" id="apidoc.module.rss">module rss</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.rss.rss" id="apidoc.element.rss.rss">
+        function <span class="apidocSignatureSpan"></span>rss
+        <span class="apidocSignatureSpan">(options, items)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function RSS(options, items) {
+    options = options || {};
+
+    this.title              = options.title || &#x27;Untitled RSS Feed&#x27;;
+    this.description        = options.description || &#x27;&#x27;;
+    this.generator          = options.generator || &#x27;RSS for Node&#x27;;
+    this.feed_url           = options.feed_url;
+    this.site_url           = options.site_url;
+    this.image_url          = options.image_url;
+    this.author             = options.author;
+    this.categories         = options.categories;
+    this.pubDate            = options.pubDate;
+    this.hub                = options.hub;
+    this.docs               = options.docs;
+    this.copyright          = options.copyright;
+    this.language           = options.language;
+    this.managingEditor     = options.managingEditor;
+    this.webMaster          = options.webMaster;
+    this.ttl                = options.ttl;
+    //option to return feed as GeoRSS is set automatically if feed.lat/long is used
+    this.geoRSS             = options.geoRSS || false;
+    this.custom_namespaces  = options.custom_namespaces || {};
+    this.custom_elements    = options.custom_elements || [];
+    this.items              = items || [];
+
+    this.item = function (options) {
+        options = options || {};
+        var item = {
+            title:            options.title || &#x27;No title&#x27;,
+            description:      options.description || &#x27;&#x27;,
+            url:              options.url,
+            guid:             options.guid,
+            categories:       options.categories || [],
+            author:           options.author,
+            date:             options.date,
+            lat:              options.lat,
+            long:             options.long,
+            enclosure:        options.enclosure || false,
+            custom_elements:  options.custom_elements || []
+        };
+
+        this.items.push(item);
+        return this;
+    };
+
+    this.xml = function(indent) {
+        return &#x27;&#x3c;?xml version=&#x22;1.0&#x22; encoding=&#x22;UTF-8&#x22;?&#x3e;&#x27; +
+            xml(generateXML(this), indent);
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rss.Gruntfile" id="apidoc.element.rss.Gruntfile">
+        function <span class="apidocSignatureSpan">rss.</span>Gruntfile
+        <span class="apidocSignatureSpan">(grunt)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Gruntfile = function (grunt) {
+
+<span class="apidocCodeCommentSpan">    /**
+     * grunt release or grunt release:patch increment the patch number
+     * grunt release:minor increments the minor version number
+     * grunt release:major increments the major version number
+     *
+
+     * grunt readme to generate the readme (you might need to do grunt repos first)
+     */
+</span>
+
+    require(&#x27;time-grunt&#x27;)(grunt);
+
+    grunt.initConfig({
+        jshint: {
+            options: {
+                jshintrc: &#x27;.jshintrc&#x27;
+            },
+            all: [
+                &#x27;Gruntfile.js&#x27;,
+                &#x27;lib/**/*.js&#x27;,
+                &#x27;test/**/*.js&#x27;
+            ]
+        },
+        release: {
+            github: {
+                repo: &#x27;dylang/node-rss&#x27;,
+                accessTokenVar: &#x27;GITHUB_ACCESS_TOKEN&#x27;
+            }
+        }
+    });
+
+    require(&#x27;load-grunt-tasks&#x27;)(grunt);
+
+    grunt.registerTask(&#x27;lint&#x27;, [
+        &#x27;jshint&#x27;
+    ]);
+
+    grunt.registerTask(&#x27;default&#x27;, [
+        &#x27;lint&#x27;
+    ]);
+
+    grunt.registerTask(&#x27;pre-publish&#x27;, [
+        &#x27;lint&#x27;,
+        &#x27;repos&#x27;,
+        &#x27;readme&#x27;
+    ]);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rss.toString" id="apidoc.element.rss.toString">
+        function <span class="apidocSignatureSpan">rss.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+    return text;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.rss.Gruntfile" id="apidoc.module.rss.Gruntfile">module rss.Gruntfile</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.rss.Gruntfile.Gruntfile" id="apidoc.element.rss.Gruntfile.Gruntfile">
+        function <span class="apidocSignatureSpan">rss.</span>Gruntfile
+        <span class="apidocSignatureSpan">(grunt)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Gruntfile = function (grunt) {
+
+<span class="apidocCodeCommentSpan">    /**
+     * grunt release or grunt release:patch increment the patch number
+     * grunt release:minor increments the minor version number
+     * grunt release:major increments the major version number
+     *
+
+     * grunt readme to generate the readme (you might need to do grunt repos first)
+     */
+</span>
+
+    require(&#x27;time-grunt&#x27;)(grunt);
+
+    grunt.initConfig({
+        jshint: {
+            options: {
+                jshintrc: &#x27;.jshintrc&#x27;
+            },
+            all: [
+                &#x27;Gruntfile.js&#x27;,
+                &#x27;lib/**/*.js&#x27;,
+                &#x27;test/**/*.js&#x27;
+            ]
+        },
+        release: {
+            github: {
+                repo: &#x27;dylang/node-rss&#x27;,
+                accessTokenVar: &#x27;GITHUB_ACCESS_TOKEN&#x27;
+            }
+        }
+    });
+
+    require(&#x27;load-grunt-tasks&#x27;)(grunt);
+
+    grunt.registerTask(&#x27;lint&#x27;, [
+        &#x27;jshint&#x27;
+    ]);
+
+    grunt.registerTask(&#x27;default&#x27;, [
+        &#x27;lint&#x27;
+    ]);
+
+    grunt.registerTask(&#x27;pre-publish&#x27;, [
+        &#x27;lint&#x27;,
+        &#x27;repos&#x27;,
+        &#x27;readme&#x27;
+    ]);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.rss.toString" id="apidoc.module.rss.toString">module rss.toString</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.rss.toString.toString" id="apidoc.element.rss.toString.toString">
+        function <span class="apidocSignatureSpan">rss.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function toString() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
 
 </div>
 

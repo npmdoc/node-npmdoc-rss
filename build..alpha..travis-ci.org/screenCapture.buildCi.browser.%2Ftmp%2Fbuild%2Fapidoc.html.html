@@ -1,4 +1,4 @@
-<div class="apidocDiv">
+<html><head></head><body><div class="apidocDiv">
 <style>
 /*csslint
 */
@@ -47,17 +47,10 @@
 }
 </style>
 <h1>api documentation for
-    <a
-
-        href="http://github.com/dylang/node-rss"
-
-    >rss (v1.2.2)</a>
+    <a href="http://github.com/dylang/node-rss">rss (v1.2.2)</a>
 </h1>
 <h4>RSS feed generator. Add RSS feeds to any project. Supports enclosures and GeoRSS.</h4>
-<div class="apidocSectionDiv"><a
-    href="#apidoc.tableOfContents"
-    id="apidoc.tableOfContents"
-><h1>table of contents</h1></a><ol>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
 
     <li class="apidocModuleLi"><a href="#apidoc.module.rss">module rss</a><ol>
 
@@ -132,9 +125,9 @@
     <li>description and source-code<pre class="apidocCodePre">function RSS(options, items) {
     options = options || {};
 
-    this.title              = options.title || &#x27;Untitled RSS Feed&#x27;;
-    this.description        = options.description || &#x27;&#x27;;
-    this.generator          = options.generator || &#x27;RSS for Node&#x27;;
+    this.title              = options.title || 'Untitled RSS Feed';
+    this.description        = options.description || '';
+    this.generator          = options.generator || 'RSS for Node';
     this.feed_url           = options.feed_url;
     this.site_url           = options.site_url;
     this.image_url          = options.image_url;
@@ -157,8 +150,8 @@
     this.item = function (options) {
         options = options || {};
         var item = {
-            title:            options.title || &#x27;No title&#x27;,
-            description:      options.description || &#x27;&#x27;,
+            title:            options.title || 'No title',
+            description:      options.description || '',
             url:              options.url,
             guid:             options.guid,
             categories:       options.categories || [],
@@ -175,7 +168,7 @@
     };
 
     this.xml = function(indent) {
-        return &#x27;&#x3c;?xml version=&#x22;1.0&#x22; encoding=&#x22;UTF-8&#x22;?&#x3e;&#x27; +
+        return '&lt;?xml version="1.0" encoding="UTF-8"?&gt;' +
             xml(generateXML(this), indent);
     };
 }</pre></li>
@@ -203,41 +196,41 @@
      */
 </span>
 
-    require(&#x27;time-grunt&#x27;)(grunt);
+    require('time-grunt')(grunt);
 
     grunt.initConfig({
         jshint: {
             options: {
-                jshintrc: &#x27;.jshintrc&#x27;
+                jshintrc: '.jshintrc'
             },
             all: [
-                &#x27;Gruntfile.js&#x27;,
-                &#x27;lib/**/*.js&#x27;,
-                &#x27;test/**/*.js&#x27;
+                'Gruntfile.js',
+                'lib/**/*.js',
+                'test/**/*.js'
             ]
         },
         release: {
             github: {
-                repo: &#x27;dylang/node-rss&#x27;,
-                accessTokenVar: &#x27;GITHUB_ACCESS_TOKEN&#x27;
+                repo: 'dylang/node-rss',
+                accessTokenVar: 'GITHUB_ACCESS_TOKEN'
             }
         }
     });
 
-    require(&#x27;load-grunt-tasks&#x27;)(grunt);
+    require('load-grunt-tasks')(grunt);
 
-    grunt.registerTask(&#x27;lint&#x27;, [
-        &#x27;jshint&#x27;
+    grunt.registerTask('lint', [
+        'jshint'
     ]);
 
-    grunt.registerTask(&#x27;default&#x27;, [
-        &#x27;lint&#x27;
+    grunt.registerTask('default', [
+        'lint'
     ]);
 
-    grunt.registerTask(&#x27;pre-publish&#x27;, [
-        &#x27;lint&#x27;,
-        &#x27;repos&#x27;,
-        &#x27;readme&#x27;
+    grunt.registerTask('pre-publish', [
+        'lint',
+        'repos',
+        'readme'
     ]);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -284,41 +277,41 @@
      */
 </span>
 
-    require(&#x27;time-grunt&#x27;)(grunt);
+    require('time-grunt')(grunt);
 
     grunt.initConfig({
         jshint: {
             options: {
-                jshintrc: &#x27;.jshintrc&#x27;
+                jshintrc: '.jshintrc'
             },
             all: [
-                &#x27;Gruntfile.js&#x27;,
-                &#x27;lib/**/*.js&#x27;,
-                &#x27;test/**/*.js&#x27;
+                'Gruntfile.js',
+                'lib/**/*.js',
+                'test/**/*.js'
             ]
         },
         release: {
             github: {
-                repo: &#x27;dylang/node-rss&#x27;,
-                accessTokenVar: &#x27;GITHUB_ACCESS_TOKEN&#x27;
+                repo: 'dylang/node-rss',
+                accessTokenVar: 'GITHUB_ACCESS_TOKEN'
             }
         }
     });
 
-    require(&#x27;load-grunt-tasks&#x27;)(grunt);
+    require('load-grunt-tasks')(grunt);
 
-    grunt.registerTask(&#x27;lint&#x27;, [
-        &#x27;jshint&#x27;
+    grunt.registerTask('lint', [
+        'jshint'
     ]);
 
-    grunt.registerTask(&#x27;default&#x27;, [
-        &#x27;lint&#x27;
+    grunt.registerTask('default', [
+        'lint'
     ]);
 
-    grunt.registerTask(&#x27;pre-publish&#x27;, [
-        &#x27;lint&#x27;,
-        &#x27;repos&#x27;,
-        &#x27;readme&#x27;
+    grunt.registerTask('pre-publish', [
+        'lint',
+        'repos',
+        'readme'
     ]);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -351,3 +344,4 @@
     ]
 </div>
 </div>
+</body></html>
