@@ -1,4 +1,7 @@
-# api documentation for  [rss (v1.2.2)](http://github.com/dylang/node-rss)  [![npm package](https://img.shields.io/npm/v/npmdoc-rss.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-rss) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-rss.svg)](https://travis-ci.org/npmdoc/node-npmdoc-rss)
+# npmdoc-rss
+
+#### basic api documentation for  [rss (v1.2.2)](http://github.com/dylang/node-rss)  [![npm package](https://img.shields.io/npm/v/npmdoc-rss.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-rss) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-rss.svg)](https://travis-ci.org/npmdoc/node-npmdoc-rss)
+
 #### RSS feed generator. Add RSS feeds to any project. Supports enclosures and GeoRSS.
 
 [![NPM](https://nodei.co/npm/rss.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/rss)
@@ -134,7 +137,8 @@
             "android-browser/latest"
         ]
     },
-    "version": "1.2.2"
+    "version": "1.2.2",
+    "bin": {}
 }
 ```
 
